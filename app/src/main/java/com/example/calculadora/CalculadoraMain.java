@@ -36,6 +36,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton7.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -44,6 +45,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton8.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -52,6 +54,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero7 = boton9.getText().toString();
                 pantalla.setText(pantalla.getText() + numero7);
 
@@ -60,6 +63,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton4.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -68,6 +72,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton5.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -76,6 +81,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton6.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -84,6 +90,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton1.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -92,6 +99,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton2.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -100,6 +108,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton3.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -108,6 +117,7 @@ public class CalculadoraMain extends AppCompatActivity {
         boton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                quitarCero(pantalla);
                 String numero = boton0.getText().toString();
                 pantalla.setText(pantalla.getText() + numero);
 
@@ -210,13 +220,15 @@ public class CalculadoraMain extends AppCompatActivity {
         botonAC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pantalla.setText("");
+                pantalla.setText("0");
             }
         });
 
+    }
+    private static void quitarCero(TextView pantalla){
 
-
-
-
+        if(pantalla.getText() == "0") {
+            pantalla.setText("");
+        }
     }
 }
