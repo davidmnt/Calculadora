@@ -247,7 +247,7 @@
        />
     <Button
         android:id="@+id/AC"
-        android:layout_width="270dp"
+        android:layout_width="260dp"
         android:layout_height="80dp"
         android:text="AC"
         android:backgroundTint="@color/grey"
