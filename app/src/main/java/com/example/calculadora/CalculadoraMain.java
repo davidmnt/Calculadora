@@ -19,7 +19,7 @@ public class CalculadoraMain extends AppCompatActivity {
         Button boton8 = findViewById(R.id.ocho);
         Button boton9 = findViewById(R.id.nueve);
         Button botonDividir = findViewById(R.id.dividir);
-        Button boton4= findViewById(R.id.cuatro);
+        Button boton4 = findViewById(R.id.cuatro);
         Button boton5 = findViewById(R.id.cinco);
         Button boton6 = findViewById(R.id.seix);
         Button botonMulti = findViewById(R.id.multiplicar);
@@ -33,136 +33,21 @@ public class CalculadoraMain extends AppCompatActivity {
         Button botonIgual = findViewById(R.id.igual);
         Button botonAC = findViewById(R.id.AC);
 
-        boton7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton7.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
+        Button[] botones = {boton7, boton8, boton9, botonDividir, boton4, boton5, boton6, botonMulti, boton1, boton2, boton3, botonRestar, boton0, botonSuma, botonComa};
 
-            }
-        });
-        boton8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton8.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
+        for (int i = 0; i < botones.length; i++) {
 
-            }
-        });
-        boton9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero7 = boton9.getText().toString();
-                pantalla.setText(pantalla.getText() + numero7);
+            int cont = i;
+            botones[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    quitarCero(pantalla);
+                    String numero = botones[cont].getText().toString();
+                    pantalla.setText(pantalla.getText() + numero);
+                }
+            });
+        }
 
-            }
-        });
-        boton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton4.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
-
-            }
-        });
-        boton5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton5.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
-
-            }
-        });
-        boton6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton6.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
-
-            }
-        });
-        boton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton1.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
-
-            }
-        });
-        boton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton2.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
-
-            }
-        });
-        boton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton3.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
-
-            }
-        });
-        boton0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                quitarCero(pantalla);
-                String numero = boton0.getText().toString();
-                pantalla.setText(pantalla.getText() + numero);
-
-            }
-        });
-        botonDividir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String dividir = botonDividir.getText().toString();
-                pantalla.setText(pantalla.getText() + dividir);
-
-            }
-        });
-        botonMulti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String Multi = botonMulti.getText().toString();
-                pantalla.setText(pantalla.getText() + Multi);
-
-            }
-        });
-        botonRestar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String resta = botonRestar.getText().toString();
-                pantalla.setText(pantalla.getText() + resta);
-
-            }
-        });
-        botonSuma.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String mas = botonSuma.getText().toString();
-                pantalla.setText(pantalla.getText() + mas);
-
-            }
-        });
-        botonComa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String numero7 = boton7.getText().toString();
-                pantalla.setText(pantalla.getText() + numero7);
-
-            }
-        });
         botonIgual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,22 +57,21 @@ public class CalculadoraMain extends AppCompatActivity {
                 String num2 = "";
 
                 //pasamos el numero a un Array de char
-
                 char[] numChar = pantalla.getText().toString().toCharArray();
 
                 //Hacemos un bucle para sacar el primer numero hasta el signo de operacion
-                for(int i=0;i<numChar.length;i++){
+                for (int i = 0; i < numChar.length; i++) {
 
                     //Forzamos un break para una vez llegado al signo pare de concatenar numeros al num1
-                    if(numChar[i] == '+' || numChar[i] =='-' || numChar[i] =='*' || numChar[i] =='/'){
+                    if (numChar[i] == '+' || numChar[i] == '-' || numChar[i] == '*' || numChar[i] == '/') {
                         break;
                     }
-                    num1 +=pantalla.getText().toString().charAt(i);
+                    num1 += pantalla.getText().toString().charAt(i);
                     contTotal++;
 
                 }
                 //Luego hacemos otro bucle para para sacra el num2 inicializando el cont del for anterior +1
-                for(int i=contTotal+1;i<numChar.length;i++){
+                for (int i = contTotal + 1; i < numChar.length; i++) {
                     num2 += String.valueOf(pantalla.getText().toString().charAt(i));
                 }
 
@@ -197,19 +81,22 @@ public class CalculadoraMain extends AppCompatActivity {
                 char operacion = pantalla.getText().toString().charAt(contTotal);
 
                 //Segun el signo hacemos la operacion correspondiente
-             switch (operacion){
-                 case '+': result = numero1 + numero2;
-                 break;
-                 case '-': result = numero1 - numero2;
-                 break;
-                 case '/': result = numero1 / numero2;
-                 break;
-                 case '*': result = numero1 * numero2;
-             }
+                switch (operacion) {
+                    case '+':
+                        result = numero1 + numero2;
+                        break;
+                    case '-':
+                        result = numero1 - numero2;
+                        break;
+                    case '/':
+                        result = numero1 / numero2;
+                        break;
+                    case '*':
+                        result = numero1 * numero2;
+                }
 
 
                 String resultado = "" + result;
-
 
                 pantalla.setText(resultado);
 
@@ -225,9 +112,10 @@ public class CalculadoraMain extends AppCompatActivity {
         });
 
     }
-    private static void quitarCero(TextView pantalla){
 
-        if(pantalla.getText() == "0") {
+    private static void quitarCero(TextView pantalla) {
+
+        if (pantalla.getText() == "0") {
             pantalla.setText("");
         }
     }
