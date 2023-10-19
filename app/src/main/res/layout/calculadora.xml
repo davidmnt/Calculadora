@@ -21,6 +21,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/pantallaError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="30sp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/pantalla"
+        android:gravity="end"
+        />
+
+    <TextView
         android:id="@+id/pantalla"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -210,7 +223,7 @@
         android:id="@+id/coma"
         android:layout_width="75dp"
         android:layout_height="80dp"
-        android:text=","
+        android:text="."
         android:textColor="@color/black"
         android:backgroundTint="@color/white"
         android:layout_marginStart="18dp"
@@ -221,7 +234,7 @@
 
     <Button
         android:id="@+id/cero"
-        android:layout_width="168dp"
+        android:layout_width="167dp"
         android:layout_height="80dp"
         android:text="0"
         android:textColor="@color/black"
