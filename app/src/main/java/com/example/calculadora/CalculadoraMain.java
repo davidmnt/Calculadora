@@ -70,6 +70,7 @@ public class CalculadoraMain extends AppCompatActivity {
                     //Forzamos un break para una vez llegado al signo pare de concatenar numeros al num1
                     if (numChar[i] == '+' || numChar[i] == '-' || numChar[i] == '*' || numChar[i] == '/') {
                         operacion = pantalla.getText().toString().charAt(contTotal);
+                        break;
                     }
                     //Mientras el bucle no detecte un signo de operacion va a concatenar el numero y sumar el contador
                     if (numChar[i] != '+' || numChar[i] != '-' || numChar[i] != '*' || numChar[i] != '/') {
